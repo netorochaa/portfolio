@@ -667,9 +667,24 @@ async function typeHtmlContent(el, html) {
 /* ═══════════════════════════════════════════════════════════════
    LOADING ANIMATION
 ═══════════════════════════════════════════════════════════════ */
+async function fetchReleaseTag() {
+  try {
+    const res = await fetch('https://api.github.com/repos/netorochaa/portfolio/releases/latest');
+    if (!res.ok) return null;
+    const data = await res.json();
+    return { tag: data.tag_name, date: data.published_at } || null;
+  } catch {
+    return null;
+  }
+}
+
 async function runLoadingScreen() {
   const cmdLine = document.getElementById('boot-cmd');
   const output  = document.getElementById('boot-output');
+
+  const release = await fetchReleaseTag();
+  const versionLabel = release?.tag  ?? 'v1.0.0';
+  const dateLabel    = release?.date ? release.date.slice(0, 10) : '2026-03-13';
 
   await typeBootCmd(cmdLine, '$ jose-neto --start');
   await sleep(150);
@@ -680,7 +695,7 @@ async function runLoadingScreen() {
   await appendBootRow(output, `<span class="dim">──────────────────────────────────────</span>`, '', 80);
   await appendBootRow(output, `
     <span class="header">⬡ &nbsp;José Neto</span>
-    <span class="dim">Model v1.0.2 &nbsp;(2026-03-13)</span>
+    <span class="dim">Model ${versionLabel} &nbsp;(${dateLabel})</span>
   `, '', 160);
   await appendBootRow(output, `<span class="dim">──────────────────────────────────────</span>`, '', 240);
   await appendBootRow(output, ``, 'spacer', 280);
