@@ -9,11 +9,11 @@ const PORTFOLIO = {
   skills: [
     {
       label: { pt: 'Back-end', en: 'Back-end' },
-      tags: ['PHP', 'Java', '.Net', 'Laravel', 'Symfony', 'CakePHP', 'Spring Boot', 'Quarkus', 'PHPUnit', 'Pest', 'JUnit'],
+      tags: ['PHP', 'Java', '.Net', 'Laravel', 'Symfony', 'CakePHP', 'Spring Boot', 'Quarkus', 'PHPUnit', 'Pest', 'JUnit', 'Microservices'],
     },
     {
       label: { pt: 'Front-end', en: 'Front-end' },
-      tags: ['JavaScript', 'TypeScript', 'Vue.js', 'Angular (9–19)', 'Alpine.js', 'Livewire', 'Bootstrap', 'Tailwind CSS', 'PrimeFlex', 'Sass / Scss / Less', 'Shadcn', 'Vuetify', 'PrimeVue', 'Angular Material', 'PrimeNG', 'WireUI', 'Vue Test Utils', 'Jest', 'Jasmine', 'Karma'],
+      tags: ['JavaScript', 'TypeScript', 'Vue.js', 'Angular (9–21)', 'Alpine.js', 'Livewire', 'Bootstrap', 'Tailwind CSS', 'PrimeFlex', 'PrimeVue', 'PrimeNG', 'Sass / Scss / Less', 'Shadcn', 'Vuetify',  'Angular Material', 'WireUI', 'Vue Test Utils', 'Jest', 'Jasmine', 'Karma'],
     },
     {
       label: { pt: 'Banco de Dados', en: 'Database' },
@@ -21,7 +21,7 @@ const PORTFOLIO = {
     },
     {
       label: { pt: 'DevOps & Cloud', en: 'DevOps & Cloud' },
-      tags: ['Docker', 'Red Hat OpenShift', 'AWS (SQS, S3, EC2, Lambda)', 'MinIO', 'Amezmo', 'Vapor', 'Envoyer', 'Forge', 'Jenkins', 'GitHub', 'GitLab', 'Bitbucket'],
+      tags: ['Docker', 'Red Hat OpenShift', 'AWS (SQS, S3, EC2, Lambda)', 'RabbitMQ', 'MinIO', 'Amezmo', 'Vapor', 'Envoyer', 'Forge', 'Jenkins', 'GitHub', 'GitLab', 'Bitbucket'],
     },
     {
       label: { pt: 'Integrações & APIs', en: 'Integrations & APIs' },
@@ -100,12 +100,21 @@ const PORTFOLIO = {
       stack: ['PHP', 'Java', 'Laravel', 'Spring', 'Quarkus', 'Angular', 'Vue.js', 'OpenShift'],
     },
     {
+      name: 'SFI Green Markets | Datafix | SFI MMFund',
+      desc: {
+        pt: 'Plataformas desenvolvidas para SFI Markets, empresa holandesa de trading. Sistema de suporte às operações nos mercados primário, secundário e monetário, com gestão de produtos financeiros como empréstimos, títulos e depósitos em cash para investidores institucionais europeus.',
+        en: 'Platforms developed for SFI Markets, a Dutch trading firm. Supports operations across primary, secondary and money markets, managing financial products such as standardized loans, bonds and cash deposits for top European institutional investors.',
+      },
+      stack: ['PHP', 'Laravel', 'Livewire', 'Tailwind CSS', 'Ansible', 'Terraform', 'AWS', 'S3'],
+      link: 'https://sfimarkets.com/',
+    },
+    {
       name: 'Jobflo',
       desc: {
         pt: 'Plataforma SaaS multi-tenant para gestão de negócios desenvolvida na DevSquad. Foco em performance, interfaces dinâmicas e integrações com serviços externos de pagamento, comunicação e monitoramento solar.',
         en: 'Multi-tenant SaaS platform for business management developed at DevSquad. Focus on performance, dynamic interfaces and integrations with external payment, communication and solar monitoring services.',
       },
-      stack: ['Laravel', 'Vue.js', 'Livewire', 'Alpine.js', 'Tailwind CSS', 'AWS', 'Stripe', 'Aurora Solar'],
+      stack: ['PHP', 'Laravel', 'Vue.js', 'Livewire', 'Alpine.js', 'Tailwind CSS', 'AWS', 'Stripe', 'Aurora Solar'],
       link: 'https://www.jobflo.com/',
     },
     {
@@ -114,8 +123,17 @@ const PORTFOLIO = {
         pt: 'Aplicação SaaS desenvolvida na DevSquad para gestão transparente de manutenções. Solução multi-tenant com foco em comunicação entre prestadores de serviço e clientes.',
         en: 'SaaS application developed at DevSquad for transparent maintenance management. Multi-tenant solution focused on communication between service providers and clients.',
       },
-      stack: ['Laravel', 'Livewire', 'Tailwind CSS', 'PostgreSQL'],
+      stack: ['PHP','Laravel', 'Livewire', 'Tailwind CSS', 'PostgreSQL'],
       link: 'https://www.transparentmaintenance.com/',
+    },
+    {
+      name: 'Yogha Negócios',
+      desc: {
+        pt: 'Sistema administrativo para gerência de serviços de hotelaria. Integração com APIs externas de reserva e comunicação, gerenciamento de filas e infraestrutura em cloud.',
+        en: 'Administrative system for hospitality service management. Integration with external booking and communication APIs, queue management and cloud infrastructure.',
+      },
+      stack: ['PHP', 'Laravel', 'Bootstrap', 'PostgreSQL', 'EC2', 'SQS', 'WhatsApp API', 'Booking API'],
+      link: 'https://negocios.yogha.com.br/',
     },
     {
       name: { pt: 'Sistema de Agendamento de Visitas', en: 'Visit Scheduling System' },
@@ -123,7 +141,7 @@ const PORTFOLIO = {
         pt: 'Sistema para gerenciar e organizar agendamentos e criar rotas para visitas de colaboradores a clientes. Desenvolvido para organizações de grande porte com foco em escalabilidade e boas práticas.',
         en: 'System to manage and organize appointments and create routes for employee visits to clients. Built for large organizations with a focus on scalability and best practices.',
       },
-      stack: ['Laravel', 'MySQL', 'PSR', 'MVC'],
+      stack: ['PHP', 'Laravel', 'MySQL'],
       link: 'https://coleta.roseannedore.com.br/',
     },
     {
@@ -662,7 +680,7 @@ async function runLoadingScreen() {
   await appendBootRow(output, `<span class="dim">──────────────────────────────────────</span>`, '', 80);
   await appendBootRow(output, `
     <span class="header">⬡ &nbsp;José Neto</span>
-    <span class="dim">Model v1.0.1 &nbsp;(2026-03-13)</span>
+    <span class="dim">Model v1.0.2 &nbsp;(2026-03-13)</span>
   `, '', 160);
   await appendBootRow(output, `<span class="dim">──────────────────────────────────────</span>`, '', 240);
   await appendBootRow(output, ``, 'spacer', 280);
@@ -899,18 +917,47 @@ async function animateFakeInput(convId) {
    EVENT LISTENERS
 ═══════════════════════════════════════════════════════════════ */
 // Sidebar collapse
+const isMobile = () => window.innerWidth <= 680;
+
 function updateSidebarReopenBtn() {
-  const collapsed = document.getElementById('sidebar').classList.contains('collapsed');
-  document.getElementById('sidebar-reopen').style.display = collapsed ? 'flex' : 'none';
+  const sidebar = document.getElementById('sidebar');
+  const btn = document.getElementById('sidebar-reopen');
+  if (isMobile()) {
+    btn.style.display = sidebar.classList.contains('mobile-open') ? 'none' : 'flex';
+  } else {
+    btn.style.display = sidebar.classList.contains('collapsed') ? 'flex' : 'none';
+  }
 }
+
 document.getElementById('sidebar-toggle').addEventListener('click', () => {
-  document.getElementById('sidebar').classList.toggle('collapsed');
+  const sidebar = document.getElementById('sidebar');
+  if (isMobile()) {
+    sidebar.classList.remove('mobile-open');
+    document.getElementById('sidebar-overlay').classList.remove('active');
+  } else {
+    sidebar.classList.toggle('collapsed');
+  }
   updateSidebarReopenBtn();
 });
+
 document.getElementById('sidebar-reopen').addEventListener('click', () => {
-  document.getElementById('sidebar').classList.remove('collapsed');
+  const sidebar = document.getElementById('sidebar');
+  if (isMobile()) {
+    sidebar.classList.add('mobile-open');
+    document.getElementById('sidebar-overlay').classList.add('active');
+  } else {
+    sidebar.classList.remove('collapsed');
+  }
   updateSidebarReopenBtn();
 });
+
+document.getElementById('sidebar-overlay').addEventListener('click', () => {
+  document.getElementById('sidebar').classList.remove('mobile-open');
+  document.getElementById('sidebar-overlay').classList.remove('active');
+  updateSidebarReopenBtn();
+});
+
+window.addEventListener('resize', updateSidebarReopenBtn);
 
 // Sidebar nav
 document.getElementById('conv-list').addEventListener('click', e => {
@@ -918,6 +965,11 @@ document.getElementById('conv-list').addEventListener('click', e => {
   if (!item) return;
   const id = item.dataset.conv;
   if (id && id !== currentConv) loadConversation(id, true);
+  if (isMobile()) {
+    document.getElementById('sidebar').classList.remove('mobile-open');
+    document.getElementById('sidebar-overlay').classList.remove('active');
+    updateSidebarReopenBtn();
+  }
 });
 
 // Language toggle
